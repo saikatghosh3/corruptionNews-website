@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "investigative",
+    "name": "অনুসন্ধানী প্রতিবেদন",
+    "description": "নথি, তথ্য ও মাঠপর্যায়ের অনুসন্ধানে সত্যের কাছাকাছি",
+    "subcategories": [
+      {"slug": "budget-finance", "name": "বাজেট ও অর্থ", "description": "জনকোষের বরাদ্দ, ব্যয় ও অসঙ্গতির অনুসন্ধান"},
+      {"slug": "corruption", "name": "দুর্নীতির অনুসন্ধান", "description": "অনিয়ম, আত্মসাৎ ও স্বজনপ্রীতির নথিভিত্তিক চিত্র"},
+      {"slug": "projects", "name": "উন্নয়ন প্রকল্প", "description": "প্রকল্পের কাগজ আর মাঠের বাস্তবতার ফারাক"},
+      {"slug": "environment-land", "name": "পরিবেশ ও ভূমি", "description": "নদী, জলাভূমি ও জমি নিয়ে লুকানো সত্য"},
+      {"slug": "education-health", "name": "শিক্ষা ও স্বাস্থ্য", "description": "শিক্ষাঙ্গন ও চিকিৎসাসেবার অভ্যন্তরীণ প্রশ্ন"}
+    ]
+  },
+  {
+    "slug": "public-admin",
+    "name": "জনপ্রশাসন",
+    "description": "রাষ্ট্র পরিচালনা ও জনসেবার ভেতরের খবর",
+    "subcategories": [
+      {"slug": "digital-services", "name": "ডিজিটাল সেবা", "description": "অনলাইন সেবার প্রতিশ্রুতি ও নাগরিকের প্রকৃত অভিজ্ঞতা"},
+      {"slug": "land-administration", "name": "ভূমি প্রশাসন", "description": "নামজারি, রেকর্ড ও ভূমি অফিসের কার্যপ্রণালি"},
+      {"slug": "municipal-urban", "name": "পৌরসেবা ও শহর", "description": "সিটি করপোরেশন ও পৌর এলাকার সেবার মান"},
+      {"slug": "police-safety", "name": "আইন-শৃঙ্খলা", "description": "আইন-শৃঙ্খলা বাহিনীর কার্যক্রম ও জবাবদিহি"},
+      {"slug": "administrative-reform", "name": "প্রশাসনিক সংস্কার", "description": "সেবা কেন্দ্র, প্রক্রিয়া সংকোচন ও সংস্কার উদ্যোগ"}
+    ]
+  },
+  {
+    "slug": "law",
+    "name": "দুদক ও আইন",
+    "description": "দুর্নীতি, জবাবদিহি ও আইনের গুরুত্বপূর্ণ অগ্রগতি",
+    "subcategories": [
+      {"slug": "acc-cases", "name": "দুদক মামলা", "description": "দুদকের অভিযান, মামলা ও নিষ্পত্তির গতি"},
+      {"slug": "procurement-law", "name": "সরকারি ক্রয়", "description": "দরপত্র, একক দরদাতা ও ক্রয়প্রক্রিয়ার প্রশ্ন"},
+      {"slug": "courts", "name": "আদালত ও রায়", "description": "মামলার দীর্ঘায়ু, সাক্ষ্য ও ঐতিহাসিক রায়"},
+      {"slug": "money-laundering", "name": "অর্থ পাচার", "description": "অবৈধ অর্থ স্থানান্তরের পথ ও বিচার"},
+      {"slug": "policy-reform", "name": "নীতি ও সংস্কার", "description": "আইন সংশোধন ও নীতিগত পরিবর্তনের বিশ্লেষণ"}
+    ]
+  },
+  {
+    "slug": "data-lab",
+    "name": "ডাটা ল্যাব",
+    "description": "তথ্য-উপাত্তের গভীরে গিয়ে দেখা বাস্তবতা",
+    "subcategories": [
+      {"slug": "national-stats", "name": "জাতীয় পরিসংখ্যান", "description": "আদমশুমারি, জরিপ ও সরকারি পরিসংখ্যানের পাঠ"},
+      {"slug": "budget-data", "name": "বাজেট বিশ্লেষণ", "description": "বরাদ্দের সংখ্যায় অগ্রাধিকারের বিশ্লেষণ"},
+      {"slug": "land-maps", "name": "মানচিত্র ও জমি", "description": "ভূমি রেকর্ড ও মানচিত্রভিত্তিক ডাটা বিশ্লেষণ"},
+      {"slug": "education-data", "name": "শিক্ষা ডাটা", "description": "ভর্তি, ঝরে পড়া ও শিক্ষক-ছাত্র অনুপাতের সংখ্যা"},
+      {"slug": "health-data", "name": "স্বাস্থ্য ডাটা", "description": "শয্যা, চিকিৎসক ও সেবার সমতার হিসাব"}
+    ]
+  }
+]
