@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useMemo, useState } from 'react'
 
-const LINE1 = 'দুর্নীতির প্রতিটি'
+const LINE1 = 'দুর্নীতির প্রতিটি খবর'
 const LINE2 = 'আড়াল উন্মোচন করি।'
 
 const TYPE_MS = 72

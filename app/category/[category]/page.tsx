@@ -38,13 +38,10 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
         </div>
 
         <div className="mt-10">
-          {articles.length === 0 && <p className="py-14 text-subtle">এই বিভাগে শীঘ্রই প্রতিবেদন যুক্ত হবে।</p>}
-          {articles.length > 0 && <NewsGrid articles={articles.slice(0, 6)}/>}
+          {articles.length === 0
+            ? <p className="py-14 text-subtle">এই বিভাগে শীঘ্রই প্রতিবেদন যুক্ত হবে।</p>
+            : <NewsGrid articles={articles}/>}
         </div>
-
-        {articles.length > 6 && (
-          <div className="mt-10"><NewsGrid articles={articles.slice(6)} cols={2}/></div>
-        )}
 
         <section className="mt-16 border-t border-line pt-10">
           <h2 className="mb-6 text-2xl font-bold tracking-tight">{c.name}-এর সাব-ক্যাটাগরি</h2>

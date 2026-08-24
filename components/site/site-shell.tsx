@@ -24,13 +24,13 @@ export function BrandMark({ className = 'h-9 w-9' }: { className?: string }) {
 
 export function Brand({ light = false }: { light?: boolean }) {
   return (
-    <Link href="/" className={`flex shrink-0 items-center gap-2.5 ${light ? 'text-white' : 'text-ink'}`}>
-      <BrandMark/>
-      <span className="leading-none">
-        <span className="block text-[21px] font-extrabold tracking-tight">
-          CorruptionNews<span className="text-primary">BD24</span>
+    <Link href="/" className={`flex min-w-0 shrink items-center gap-2 ${light ? 'text-white' : 'text-ink'}`}>
+      <BrandMark className="h-8 w-8 shrink-0 sm:h-9 sm:w-9"/>
+      <span className="min-w-0 leading-none">
+        <span className="block truncate text-[17px] font-extrabold tracking-tight sm:text-[21px]">
+          CorruptionNews<span className={`${light ? 'text-accent' : 'text-primary'}`}>BD24</span>
         </span>
-        <span className="mt-1 block text-[10px] font-medium tracking-wide text-subtle">দুর্নীতিবিরোধী অনুসন্ধানী সংবাদমাধ্যম</span>
+        <span className="mt-1 hidden text-[10px] font-medium tracking-wide text-subtle sm:block">দুর্নীতিবিরোধী অনুসন্ধানী সংবাদমাধ্যম</span>
       </span>
     </Link>
   )
@@ -42,8 +42,8 @@ export function Header() {
   const cats = getCategories()
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-paper/95 backdrop-blur-md">
-      <div className="mx-auto flex w-full max-w-[1160px] items-center gap-6 px-5 py-3.5">
-        <button className="lg:hidden" aria-label="মেনু খুলুন" onClick={() => setOpen(!open)}>
+      <div className="mx-auto flex w-full max-w-[1160px] items-center gap-2.5 px-4 py-3 sm:gap-6 sm:px-5 sm:py-3.5">
+        <button className="-ml-1.5 shrink-0 p-1.5 lg:hidden" aria-label={open ? 'মেনু বন্ধ করুন' : 'মেনু খুলুন'} onClick={() => setOpen(!open)}>
           {open ? <X size={22}/> : <Menu size={22}/>}
         </button>
         <Brand/>
@@ -66,15 +66,15 @@ export function Header() {
             </div>
           ))}
         </nav>
-        <div className="ml-auto flex items-center gap-4 lg:ml-2">
-          <Link href="/send-tip" className="hidden items-center gap-2 rounded bg-primary px-4 py-2.5 text-[13px] font-bold text-white transition-colors hover:bg-deep sm:inline-flex">
+        <div className="ml-auto flex shrink-0 items-center gap-1 sm:gap-4 lg:ml-2">
+          <Link href="/send-tip" className="hidden items-center gap-2 rounded bg-primary px-4 py-2.5 text-[13px] font-bold text-white transition-colors hover:bg-deep md:inline-flex">
             গোপন তথ্য পাঠান<Send size={14}/>
           </Link>
-          <Link href="/search" aria-label="অনুসন্ধান" className="text-ink transition-colors hover:text-primary"><Search size={19}/></Link>
+          <Link href="/search" aria-label="অনুসন্ধান" className="p-1.5 text-ink transition-colors hover:text-primary"><Search size={19}/></Link>
         </div>
       </div>
       {open && (
-        <div className="border-t border-line px-5 pb-6 pt-4 lg:hidden">
+        <div className="max-h-[calc(100dvh-64px)] overflow-y-auto overscroll-contain border-t border-line px-4 pb-6 pt-4 sm:px-5 lg:hidden">
           {cats.map(c => (
             <div key={c.slug} className="border-b border-line last:border-0">
               <button onClick={() => setOpenCat(openCat === c.slug ? null : c.slug)} className="flex w-full items-center justify-between py-3.5 text-[15px] font-semibold">

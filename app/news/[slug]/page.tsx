@@ -1,8 +1,9 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowLeft, ChevronRight, Clock3, Share2, Send, Quote, User } from 'lucide-react'
+import { ArrowLeft, ChevronRight, Clock3, Send, Quote, User } from 'lucide-react'
 import { Header, Footer } from '@/components/site/site-shell'
+import { ShareButton } from '@/components/site/share-button'
 import { NewsGrid } from '@/components/news/news-card'
 import { getAllNews, getNewsBySlug, getRelatedNews } from '@/lib/news'
 
@@ -41,14 +42,14 @@ export default async function Article({ params }: { params: Promise<{ slug: stri
                 <span className="bg-chip px-3 py-1 text-[11px] font-bold uppercase tracking-[1.5px] text-primary">{a.subcategory}</span>
               </div>
 
-              <h1 className="mt-6 font-serif text-[clamp(32px,5vw,58px)] font-bold leading-[1.22] tracking-tight">
+              <h1 className="mt-6 font-serif text-[clamp(30px,4.5vw,50px)] font-bold leading-[1.25] tracking-tight">
                 {a.title}
                 <span className="mt-4 block h-1 w-16 mx-auto rounded-full bg-gradient-to-r from-primary via-accent to-primary" aria-hidden="true"/>
               </h1>
 
               {/* highlighted summary */}
-              <p className="relative mt-8 border-y border-accent/40 bg-accent/[0.07] px-6 py-5 text-lg leading-relaxed text-ink/80 md:text-xl">
-                <Quote size={20} className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-white p-0.5 text-accent" aria-hidden="true"/>
+              <p className="relative mt-7 border-y border-accent/40 bg-accent/[0.07] px-5 py-4 text-left text-[17px] leading-relaxed text-ink/80 md:text-lg">
+                <Quote size={18} className="absolute -top-2.5 left-6 bg-white p-0.5 text-accent" aria-hidden="true"/>
                 {a.summary}
               </p>
 
@@ -66,13 +67,15 @@ export default async function Article({ params }: { params: Promise<{ slug: stri
         </section>
 
         {/* ── Cover image ─────────────────────────── */}
-        <figure className="mx-auto w-full max-w-[1160px] px-5 pt-10">
-          <Image src={a.image} alt={a.title} width={1600} height={900} priority className="aspect-video w-full rounded-sm object-cover shadow-[0_18px_44px_rgba(23,32,29,.12)]"/>
-          <figcaption className="pt-3 text-center text-xs text-subtle">ছবি: প্রতীকী — CorruptionNewsBD24</figcaption>
+        <figure className="mx-auto w-full max-w-[840px] px-5 pt-9">
+          <div className="overflow-hidden rounded-sm border border-line bg-chip shadow-[0_10px_28px_rgba(23,32,29,.08)]">
+            <Image src={a.image} alt={a.title} width={1200} height={675} priority sizes="(max-width: 880px) 100vw, 840px" className="aspect-[16/9] w-full object-cover"/>
+          </div>
+          <figcaption className="flex items-center gap-2 pt-2.5 text-xs text-subtle"><span className="h-3 w-0.5 bg-accent" aria-hidden="true"/>ছবি: প্রতীকী — CorruptionNewsBD24</figcaption>
         </figure>
 
         {/* ── Body ────────────────────────────────── */}
-        <div className="mx-auto grid w-full max-w-[1160px] gap-14 px-5 py-14 lg:grid-cols-[minmax(0,760px)_280px] lg:justify-center lg:gap-16">
+        <div className="mx-auto grid w-full max-w-[1160px] gap-12 px-5 py-12 lg:grid-cols-[minmax(0,760px)_280px] lg:justify-center lg:gap-16">
           <article>
             {lead && (
               <p className="border-l-4 border-accent pl-5 font-serif text-xl font-medium leading-[1.9] text-ink md:text-[22px]">{lead}</p>
@@ -90,7 +93,7 @@ export default async function Article({ params }: { params: Promise<{ slug: stri
             </div>
 
             <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-line pt-7">
-              <button className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-5 py-2.5 text-sm font-medium transition-colors hover:border-primary hover:text-primary"><Share2 size={15}/> শেয়ার করুন</button>
+              <ShareButton title={a.title}/>
               <Link href="/send-tip" className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-deep">দুর্নীতির তথ্য আছে? জানান <Send size={14}/></Link>
             </div>
           </article>

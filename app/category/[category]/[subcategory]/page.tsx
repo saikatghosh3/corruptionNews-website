@@ -40,10 +40,7 @@ export default async function SubcategoryPage({ params }: { params: Promise<{ ca
         <div className="mt-10">
           {articles.length === 0
             ? <p className="border border-dashed border-line bg-white px-6 py-16 text-center text-subtle">এই বিষয়ে প্রতিবেদন শীঘ্রই প্রকাশিত হবে।</p>
-            : <>
-              <div><NewsGrid articles={articles.slice(0, 3)}/></div>
-              {articles.length > 3 && <div className="mt-5"><NewsGrid articles={articles.slice(3)} cols={2}/></div>}
-            </>}
+            : <NewsGrid articles={articles}/>}
         </div>
 
         <section className="mt-16 border-t border-line pt-10">
