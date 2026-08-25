@@ -7,13 +7,16 @@ const CIRC = 2 * Math.PI * R
 
 export function ScrollToTop() {
   const [progress, setProgress] = useState(0)
+  const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {
     let raf = 0
     const update = () => {
       raf = 0
       const max = document.documentElement.scrollHeight - window.innerHeight
-      setProgress(max > 0 ? Math.min(window.scrollY / max, 1) : 0)
+      const y = window.scrollY
+      setScrollY(y)
+      setProgress(max > 0 ? Math.min(y / max, 1) : 0)
     }
     const onScroll = () => { if (!raf) raf = requestAnimationFrame(update) }
     update()
@@ -26,7 +29,7 @@ export function ScrollToTop() {
     }
   }, [])
 
-  const visible = progress > 0.08
+  const visible = scrollY > 300
 
   return (
     <button
