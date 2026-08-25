@@ -33,7 +33,7 @@ export function ScrollToTop() {
       onClick={() => window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })}
       title="উপরে যান"
       aria-label="উপরে যান"
-      className={`fixed bottom-6 right-6 z-50 grid h-12 w-12 place-items-center rounded-full bg-white text-primary shadow-xl shadow-ink/20 ring-1 ring-line transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl ${visible ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-5 opacity-0'}`}
+      className={`fixed bottom-20 right-6 z-50 grid h-12 w-12 place-items-center rounded-full bg-white text-primary shadow-xl shadow-ink/20 ring-1 ring-line transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl ${visible ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-5 opacity-0'}`}
     >
       <svg viewBox="0 0 48 48" className="pointer-events-none absolute inset-0 h-full w-full -rotate-90" aria-hidden="true">
         <circle cx="24" cy="24" r={R} fill="none" stroke="#e5ebe4" strokeWidth="3"/>
